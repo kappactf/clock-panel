@@ -17,7 +17,6 @@ export class ClockCtrl extends PanelCtrl {
       endCountdownTime: moment()
         .seconds(0)
         .milliseconds(0)
-        .add(1, 'day')
         .toDate(),
       endText: '00:00:00',
       customFormat: null,
@@ -164,10 +163,10 @@ export class ClockCtrl extends PanelCtrl {
     }
 
     if (timeLeft.minutes() > 0 || previous === 'hours') {
-      formattedTimeLeft += timeLeft.minutes() === 1 ? '1 minute, ' : timeLeft.minutes() + ' minutes, ';
+      formattedTimeLeft += timeLeft.minutes() === 1 ? '1 min, ' : timeLeft.minutes() + ' min, ';
     }
 
-    formattedTimeLeft += timeLeft.seconds() === 1 ? '1 second ' : timeLeft.seconds() + ' seconds';
+    formattedTimeLeft += timeLeft.seconds() === 1 ? '1 sec' : timeLeft.seconds() + ' sec';
     this.time = formattedTimeLeft;
   }
 
