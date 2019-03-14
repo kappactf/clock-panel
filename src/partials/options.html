@@ -52,7 +52,7 @@
 	<div class="section gf-form-group" ng-if="ctrl.panel.mode === 'countdown'">
 		<h5 class="section-heading">Countdown options</h5>
 		<div class="gf-form">
-			<label class="gf-form-label width-12">Deadline</label>
+			<label class="gf-form-label width-12">Start</label>
 			<span class="gf-form-select-wrapper width-16">
 				<input type="datetime-local" class="input-large gf-form-input" ng-model="ctrl.panel.countdownSettings.endCountdownTime" ng-change="ctrl.render()" ng-model-onblur>
 			</span>
@@ -60,6 +60,10 @@
 		<div class="gf-form">
 			<label class="gf-form-label width-12">End Text</label>
 			<input type="text" class="gf-form-input max-width-16" ng-model="ctrl.panel.countdownSettings.endText" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+		<div class="gf-form">
+			<label class="gf-form-label width-12">Round time (seconds)</label>
+			<input type="text" class="gf-form-input max-width-16" ng-model="ctrl.panel.countdownSettings.roundTime" ng-change="ctrl.render()" ng-model-onblur>
 		</div>
 		<div class="gf-form">
 			<label class="gf-form-label width-12">Custom Format

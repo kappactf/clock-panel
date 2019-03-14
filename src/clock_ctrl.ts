@@ -115,12 +115,18 @@ export class ClockCtrl extends PanelCtrl {
   }
 
   renderCountdown() {
+    let round_time = parseInt(this.panel.countdownSettings.roundTime);
+    let time_left = moment.duration(moment().diff(moment(this.panel.countdownSettings.endCountdownTime)));
+
+    let t = round_time - (Math.round(time_left.asSeconds()) % round_time);
+    let timeLeft = moment.duration(t, 'seconds');
+
     if (!this.panel.countdownSettings.endCountdownTime) {
       this.time = this.panel.countdownSettings.endText;
     }
 
-    const now = moment();
-    const timeLeft = moment.duration(moment(this.panel.countdownSettings.endCountdownTime).diff(now));
+    // const now = moment();
+    // const timeLeft = moment.duration(moment(this.panel.countdownSettings.endCountdownTime).diff(now));
     let formattedTimeLeft = '';
 
     if (timeLeft.asSeconds() <= 0) {

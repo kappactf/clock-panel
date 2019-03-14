@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Clock",
+  "name": "KappaClock",
   "id": "grafana-clock-panel",
 
   "info": {
